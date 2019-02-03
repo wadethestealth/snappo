@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.github.wadethestealth.snappo" >
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -8,7 +9,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="a9952efd-7579-4c63-9e39-1fa03b8141ce" />
+        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="https://wadethestealth.github.io/auth/snap" />
+        <activity
+            android:name="com.snapchat.kit.sdk.SnapKitActivity"
+            android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="wadethestealth.github.io"
+                    android:path="/auth/snap"
+                    />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

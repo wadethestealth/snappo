@@ -3,6 +3,7 @@ package com.github.wadethestealth.snappo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -12,9 +13,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.snapchat.kit.sdk.SnapLogin;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity {
     String githubURL;
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //View mLoginButton = SnapLogin.getButton(getContext(), R.id.);
     }
     public void snappoButton(View v) {
         githubCalls();
