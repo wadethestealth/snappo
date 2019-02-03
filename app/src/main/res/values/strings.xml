@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Snappo</string>
+    <string name="github_user">Github Username</string>
+    <string name="github_repo">Github Repo</string>
 </resources>
